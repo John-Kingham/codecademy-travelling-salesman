@@ -1,5 +1,5 @@
 from heapq import heappush, heappop
-import math
+from math import inf
 
 
 def dijkstras(graph, start):
@@ -11,7 +11,7 @@ def dijkstras(graph, start):
     graph : dict
         Key (str) = Vertex name.
         Value (list) = List of edges as tuples (vertex_name, weight).
-    start : string
+    start : str
         Name of the start vertex.
 
     Returns
@@ -22,7 +22,7 @@ def dijkstras(graph, start):
     """
     path_weights = {}
     for vertex in graph:
-        path_weights[vertex] = math.inf
+        path_weights[vertex] = inf
     path_weights[start] = 0
     vertices_to_explore = [(path_weights[start], start)]
     while vertices_to_explore:
